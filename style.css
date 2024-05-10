@@ -32,3 +32,6 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
+hr {
+   height: 12px;
+}
