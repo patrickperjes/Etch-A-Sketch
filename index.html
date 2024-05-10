@@ -12,20 +12,29 @@
     
     <div class="my-container">
         <div class="header">
-            <h1>Odin | Etch-a-Sketch</h1>
-    
+            <h1>Etch-a-Sketch</h1>
+            <p id="pixel">Your Canvas has a 16 x 16 pixel.</p>
             <div class="select-area">
                 <h6>Select the size</h6>
-            <button class="btn btn-success">Select</button>
+            <button id="select-pixel" class="btn btn-success">Select</button>
             </div>
             
             <div class="btns">
-                <button class="btn btn-dark">Black</button>
-                <button class="btn btn-primary">Random</button>
-                <button class="btn btn-warning">Erase</button>
-                <button class="btn btn-danger">Reset</button>
+                <p class="font-weight-bolder">Select Colors:</p>
+                <button class="btn btn-dark" onclick="setColor('black')">Black</button>
+                <button class="btn btn-danger" onclick="setColor('red')">Red</button>
+                <button class="btn btn-success" onclick="setColor('green')">Green</button>
+                <button class="btn btn-warning" onclick="setColor('yellow')">Yellow</button>
+                <button class="btn btn-primary" onclick="setColor('blue')">Blue</button>
+                <hr>
+                <button class="btn btn-info" onclick="setColor('random')">Random</button>
+                <hr>
+        
+                <p class="text-center">Actions</p>
+                <button class="btn btn-secondary" onclick="setColor('white')">Erase</button>
+                <button class="btn btn-danger" onclick="reset()">Reset</button>
             </div>
-            <p class="">lorem</p>
+            
         </div>
     
         <div class="board"></div>
