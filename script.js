@@ -14,12 +14,18 @@ document.addEventListener('DOMContentLoaded', () =>{
     });
 });
 
-function getPixelSize(){
-    const input = prompt("Select you Canvas size between 1 and 100.");
-    if (input == ""){
+function getPixelSize() {
+    const input = prompt("Select your Canvas size between 1 and 100.");
+    
+    // Regular expression to match only digits
+    const regex = /^\d+$/;
+    
+    if (!input) {
         alert("No valid Input");
-    } else if (input < 0 || input > 100){
-        alert("Invalid input you must select between 1 and 100!");
+    } else if (!regex.test(input)) {
+        alert("Invalid input. Please enter a number between 1 and 100.");
+    } else if (input < 1 || input > 100) {
+        alert("Invalid input. Please select between 1 and 100.");
     } else {
         pixelText.innerHTML = `Your Canvas has a ${input} x ${input} pixel.`;
         return input;
