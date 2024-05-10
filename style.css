@@ -1,0 +1,33 @@
+.my-container {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    margin: 50px auto;
+    max-width: 1200px;
+    gap: 50px;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 500px;
+    gap: 30px;
+}
+.select-area {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.board {
+    width: 800px;
+    height: 800px;
+    display: flex;
+    border: 1px solid;
+}
+.btns {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
