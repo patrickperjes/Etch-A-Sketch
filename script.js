@@ -1,9 +1,24 @@
 const pixelText = document.querySelector('#pixel');
 const colors = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
-
+let click = false;
 let color = 'black';
+
 document.addEventListener('DOMContentLoaded', () =>{
     getBoardSize(16);
+
+    document.querySelector('body').addEventListener('click', (e) =>{
+        if (e.target.tagName != "BUTTON"){
+            click = !click;
+            let draw = document.querySelector('#draw');
+
+            if (click){
+                draw.innerHTML = "Now you can draw or erase!";
+            } else {
+                draw.innerHTML = "You're not allowed to draw or erase!";
+            }
+        }
+   });
+
 
     const selectPixelBtn = document.querySelector('#select-pixel');
     selectPixelBtn.addEventListener('click', () => {
@@ -44,7 +59,7 @@ function getBoardSize(size){
         let div = document.createElement('div');
 
         div.addEventListener('mouseover', colorDiv);
-
+        // div.style.border = "1px solid gray"
         board.appendChild(div);
     }
 }
@@ -61,6 +76,7 @@ function randomHexCode(){
 }
 
 function colorDiv(){
+   if (click){
     if(color == 'random'){
         this.style.backgroundColor = randomColors();
     } else if (color == 'white'){
@@ -76,6 +92,7 @@ function colorDiv(){
     } else {
         this.style.backgroundColor = 'black';
     }
+   }
 }
 function setColor(colorChoice){
     color = colorChoice;
